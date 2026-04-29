@@ -20,7 +20,7 @@ void changeImage() {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Image Like Program"),
+        title: Text("Image change Program"),
       ),
       body: Center(
         child: Column(
