@@ -20,6 +20,7 @@ void changeImage() {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blue.shade800,
         title: Text("Image change Program"),
       ),
       body: Center(
@@ -38,6 +39,10 @@ void changeImage() {
               height: 20),
               ElevatedButton(onPressed: changeImage,
                child: Text("change image"),
+               style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.black26,
+                foregroundColor: Colors.black
+               ),
                ),
           ],
         ),
