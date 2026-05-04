@@ -27,6 +27,10 @@ import 'navigation/search_screen.dart';
 import 'provider/counter_app/counter_provider.dart';
 import 'provider/theme_change/theme_provider.dart';
 import 'provider/theme_change/home_page.dart';
+import 'provider/images_like/UI_HomePage.dart';
+import 'provider/images_like/provider.dart';
+import 'provider/images_like/provider.dart';
+
 void main() {
   runApp(
     MultiProvider(
@@ -37,6 +41,9 @@ void main() {
           ChangeNotifierProvider(
             create: (_) => Counter(),
             ),
+            ChangeNotifierProvider(
+              create: (_) => LikeProvider(),
+              ),
       ],
       child: MyApp(),
       )
@@ -54,7 +61,7 @@ class MyApp extends StatelessWidget {
       theme: themeProvider.islight
       ? ThemeData.dark()
       : ThemeData.light(),
-      home: ThemeChange(),
+      home: instaimage(),
     );
   }
 }
