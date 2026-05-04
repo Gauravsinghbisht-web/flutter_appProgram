@@ -14,7 +14,7 @@ class _FormPageState extends State<FormPage> {
 
   void validateForm() {
     setState(() {
-      nameError = nameController.text.isEmpty ?
+      nameError = nameController.text.contains("M") ?
        "Enter Name" : "";
       emailError = emailController.text.contains("@") ?
        "" : "Enter valid Email";
@@ -39,6 +39,7 @@ class _FormPageState extends State<FormPage> {
         padding: EdgeInsets.all(20),
         child: Column(
           children: [
+
             TextField(
               controller: nameController,
               decoration: InputDecoration(
@@ -48,19 +49,21 @@ class _FormPageState extends State<FormPage> {
                 fillColor: Colors.white,
               ),
             ),
-            SizedBox(height: 20),
 
+
+            SizedBox(height: 20),
             TextField(
               controller: emailController,
               decoration: InputDecoration(
-                labelText: "Email",
+                labelText: "E-mail",
                 errorText: emailError.isEmpty ? null : emailError,
                 filled: true,
                 fillColor: Colors.white,
               ),
             ),
-            SizedBox(height: 30),
 
+
+            SizedBox(height: 30),
             ElevatedButton(
               onPressed: validateForm,
               child: Text("Submit"),

@@ -11,15 +11,14 @@ class _SnackBarExampleState extends State<SnackBarExample> {
   void showSnackBar() {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-     content: Text("This is a SnackBar Message"),
-     backgroundColor: Colors.green,
-      duration: Duration(seconds: 2),
-    action: SnackBarAction(
-     label: "UNDO",
-     textColor: Colors.white,
-          onPressed: () {
-            // action when clicked
-            print("Undo clicked");
+       content: Text("This is a SnackBar Message"),
+        backgroundColor: Colors.green,
+         duration: Duration(seconds: 2),
+           action: SnackBarAction(
+            label: "UNDO",
+             textColor: Colors.white,
+              onPressed: () {
+                print("Undo clicked");
           },
         ),
       ),

@@ -12,7 +12,7 @@ class _SnackBarTypesState extends State<SnackBarTypes> {
   void showSuccessSnackBar() {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text("✔ Successfully Saved!"),
+        content: Text("Successfully Saved!"),
         backgroundColor: Colors.green,
         duration: Duration(seconds: 2),
       ),
@@ -22,7 +22,7 @@ class _SnackBarTypesState extends State<SnackBarTypes> {
   void showErrorSnackBar() {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text("Something went wrong!"),
+        content: Text("Something went wrong! Please try again"),
         backgroundColor: Colors.red,
         duration: Duration(seconds: 5),
       ),
@@ -63,7 +63,6 @@ class _SnackBarTypesState extends State<SnackBarTypes> {
             ),
 
             SizedBox(height: 10),
-
             ElevatedButton(
               onPressed: showInfoSnackBar,
               child: Text("Info SnackBar"),

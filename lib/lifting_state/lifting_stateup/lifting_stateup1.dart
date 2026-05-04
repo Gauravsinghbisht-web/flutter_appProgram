@@ -17,7 +17,7 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue.shade100,
+        backgroundColor: const Color.fromARGB(255, 108, 173, 226),
         title: Text("Cart: $cartCount"),
       ),
       body: Column(

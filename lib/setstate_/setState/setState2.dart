@@ -22,7 +22,7 @@ class _TextfeildexampleState extends State<Textfeildexample> {
         children: [
           TextField(
             decoration: InputDecoration(
-              labelText: "Enter your name",
+              labelText: "Enter your description",
               border: OutlineInputBorder(),
             ),
             onChanged: (value) {
@@ -32,7 +32,7 @@ class _TextfeildexampleState extends State<Textfeildexample> {
             }
           ),
           SizedBox(height: 20),
-          Text("hello, $name",
+          Text("Hello, $name",
             style: TextStyle(fontSize: 24),
           ),
         ],
