@@ -16,10 +16,12 @@ class instaimage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Instagram Like System"),
+        title: Text("Instagram Like System"),
+        backgroundColor: Colors.lightBlue.shade300,
         centerTitle: true,
       ),
-      body: ListView.builder(
+      body: 
+      ListView.builder(
         itemCount: images.length,
         itemBuilder: (context, index) {
           bool isLiked = provider.isLiked(index);
@@ -29,7 +31,6 @@ class instaimage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // 🖼️ Image
                 Stack(
                   children: [
                     Image.asset(
@@ -38,21 +39,10 @@ class instaimage extends StatelessWidget {
                       height: 250,
                       fit: BoxFit.cover,
                     ),
-
-                    // ❤️ Double tap like effect
-                    Positioned.fill(
-                      child: GestureDetector(
-                        onDoubleTap: () {
-                          provider.toggleLike(index);
-                        },
-                        child: Container(color: Colors.transparent),
-                      ),
-                    ),
                   ],
                 ),
-
-                // ❤️ Like button row
-                Row(
+                    
+                Row(    //it is for like button row
                   children: [
                     IconButton(
                       icon: Icon(
@@ -66,13 +56,12 @@ class instaimage extends StatelessWidget {
                       },
                     ),
                     Text(
-                      isLiked ? "Liked ❤️" : "Like 🤍",
-                      style: const TextStyle(fontSize: 16),
+                      isLiked ? "Liked" : "Like",
+                      style: TextStyle(fontSize: 16),
                     ),
                   ],
                 ),
-
-                const SizedBox(height: 10),
+              SizedBox(height: 15),
               ],
             ),
           );
