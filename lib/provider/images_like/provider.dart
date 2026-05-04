@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class LikeProvider extends ChangeNotifier {
   List<int>_likedItems = [];
-  List<int> get likedItems => _likedItems;
+  List<int> get likedItems => _likedItems;   //getter to access liked items outside class
 
   void toggleLike(int index) {
 

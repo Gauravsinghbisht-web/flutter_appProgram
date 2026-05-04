@@ -16,14 +16,14 @@ class instaimage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Instagram Like System"),
+        title:  Text("Instagram Like System"),
         backgroundColor: Colors.lightBlue.shade300,
         centerTitle: true,
       ),
       body: 
       ListView.builder(
         itemCount: images.length,
-        itemBuilder: (context, index) {
+        itemBuilder: (context, index) { // this is for run again and again
           bool isLiked = provider.isLiked(index);
 
           return Card(
