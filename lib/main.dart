@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/api(get)/api_homepage.dart';
 import 'package:flutter_application_1/provider/theme_change/home_page.dart';
 import 'package:provider/provider.dart';
 import 'form_/form/form2.dart';
@@ -61,7 +62,7 @@ class MyApp extends StatelessWidget {
       theme: themeProvider.islight
       ? ThemeData.dark()
       : ThemeData.light(),
-      home: instaimage(),
+      home: HomePageapi(),
     );
   }
 }
