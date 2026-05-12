@@ -57,6 +57,7 @@ class _HomePageState extends State<tenuser> {
 
       appBar: AppBar(
         title: Text("10 Users API"),
+        backgroundColor: Colors.blue.shade300,
         centerTitle: true,
       ),
 
@@ -75,16 +76,16 @@ class _HomePageState extends State<tenuser> {
                 return Card(
 
                   margin: EdgeInsets.symmetric(
-                    horizontal: 10,
+                    horizontal: 18,
                     vertical: 6,
                   ),
 
-                  elevation: 5,
+                  elevation: 25,
 
                   child: ListTile(
 
                     leading: CircleAvatar(
-                      radius: 25,
+                      radius: 35,
                       child: Icon(Icons.person),
                     ),
 
