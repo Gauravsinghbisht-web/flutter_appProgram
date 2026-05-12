@@ -6,7 +6,7 @@ class UserService {
   static Future<Map<String, dynamic>?> fetchUser() async {
 
     var url = Uri.parse(
-      "https://jsonplaceholder.typicode.com/users/1",
+      "https://jsonplaceholder.typicode.com/users",
     );
 
     var response = await http.get(url);
