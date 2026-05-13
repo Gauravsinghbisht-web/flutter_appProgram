@@ -15,28 +15,23 @@ class _HomePageState extends State<tenuser> {
 
   Future<void> fetchUsers() async {
 
-    try {
+    try {    //try is check for error safety
 
-      var response = await http.get(
+      var response = await http.get(   //sends get request to the server 
         Uri.parse(
-          "https://jsonplaceholder.typicode.com/users",
+          "https://jsonplaceholder.typicode.com/users",  // parse is convert url to uri
         ),
       );
 
       if (response.statusCode == 200) {
-
-        users = jsonDecode(response.body);
-
-      } else {
-
+        users = jsonDecode(response.body);  // here is convert json string to dart list
+       }
+      else {
         print("Failed to load users");
 
       }
-
-    } catch (e) {
-
+    } catch (e) {  //it is catch errors like- no internet, wrong url, server error
       print("Error: $e");
-
     }
 
     setState(() {
@@ -54,7 +49,6 @@ class _HomePageState extends State<tenuser> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-
       appBar: AppBar(
         title: Text("10 Users API"),
         backgroundColor: Colors.blue.shade300,
@@ -64,15 +58,13 @@ class _HomePageState extends State<tenuser> {
       body: isLoading
 
           ? Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(), //show circle(loading) animation.
             )
 
           : ListView.builder(
+              itemCount: users.length, //total number of users
 
-              itemCount: users.length,
-
-              itemBuilder: (context, index) {
-
+              itemBuilder: (context, index) {  //each user one by one
                 return Card(
 
                   margin: EdgeInsets.symmetric(
@@ -80,9 +72,9 @@ class _HomePageState extends State<tenuser> {
                     vertical: 6,
                   ),
 
-                  elevation: 25,
+                  elevation: 25,    //for shadow
 
-                  child: ListTile(
+                  child: ListTile(  //for row
 
                     leading: CircleAvatar(
                       radius: 35,
@@ -104,6 +96,9 @@ class _HomePageState extends State<tenuser> {
 
                         Text(
                           users[index]['email'],
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
 
                         SizedBox(height: 5),
