@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/api(get)/fetchimage/home_page_image.dart';
+import 'package:flutter_application_1/api(get)/comments/10_comments/tenhomepage_service.dart';
+import 'package:flutter_application_1/api(get)/comments/1_comment/homepage_comments.dart';
 import 'package:flutter_application_1/provider/theme_change/home_page.dart';
 import 'package:provider/provider.dart';
 import 'form_/form/form2.dart';
@@ -31,9 +32,10 @@ import 'provider/theme_change/home_page.dart';
 import 'provider/images_like/UI_HomePage.dart';
 import 'provider/images_like/provider.dart';
 import 'provider/images_like/provider.dart';
-import 'package:flutter_application_1/api(get)/1_user/api_homepage.dart';
-import 'package:flutter_application_1/api(get)/1_user/user_service.dart';
-import 'package:flutter_application_1/api(get)/10_user/10_homepage.dart';
+import 'package:flutter_application_1/api(get)/user/1_user/api_homepage.dart';
+import 'package:flutter_application_1/api(get)/user/1_user/user_service.dart';
+import 'package:flutter_application_1/api(get)/user/10_user/10_homepage.dart';
+import 'package:flutter_application_1/api(get)/fetchimage/home_page_image.dart';
 
 
 void main() {
@@ -66,7 +68,7 @@ class MyApp extends StatelessWidget {
       theme: themeProvider.islight
       ? ThemeData.dark()
       : ThemeData.light(),
-      home: tenuser(),
+      home: CommentPage(),
     );
   }
 }
