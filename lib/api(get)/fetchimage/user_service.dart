@@ -1,29 +1,21 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-class UserService {
+class PhotoService {
 
-  static Future<Map<String, dynamic>>
-      fetchUser() async {
+  static Future<Map<String, dynamic>> fetchPhoto() async {
 
-    try {
+    final response = await http.get(
+      Uri.parse("https://jsonplaceholder.typicode.com/photos/1"),
+    );
 
-      var response = await http.get(
-        Uri.parse("hhttps://jsonplaceholder.typicode.com/photos/1")
-      );
+    if (response.statusCode == 200) {
 
-      if (response.statusCode == 200) {
+      return jsonDecode(response.body);
 
-        return jsonDecode(response.body);
+    } else {
 
-      } else {
-
-        throw Exception("Failed to load user");
-      }
-
-    } catch (e) {
-
-      throw Exception(e.toString());
+      throw Exception("Failed to load photo");
 
     }
   }

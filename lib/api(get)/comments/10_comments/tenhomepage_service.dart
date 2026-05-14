@@ -14,30 +14,21 @@ class _CommentPageState extends State<CommentPage> {
   final CommentService service = CommentService();
 
   late Future<List<Comment>> futureComments;
-
   @override
   void initState() {
     super.initState();
     futureComments = service.fetchComments();
   }
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-
       appBar: AppBar(
         title: const Text('10 Comments API'),
       ),
-
       body: FutureBuilder<List<Comment>>(
-
         future: futureComments,
-
         builder: (context, snapshot) {
-
           if (snapshot.connectionState == ConnectionState.waiting) {
-
             return const Center(
               child: CircularProgressIndicator(),
             );
@@ -51,7 +42,6 @@ class _CommentPageState extends State<CommentPage> {
           }
 
           final comments = snapshot.data!;
-
           return ListView.builder(
             itemCount: comments.length,
             itemBuilder: (context, index) {

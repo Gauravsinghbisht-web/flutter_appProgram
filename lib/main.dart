@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/api(get)/comments/10_comments/tenhomepage_service.dart';
 import 'package:flutter_application_1/api(get)/comments/1_comment/homepage_comments.dart';
+import 'package:flutter_application_1/api(get)/weather/weather_page.dart';
 import 'package:flutter_application_1/provider/theme_change/home_page.dart';
 import 'package:provider/provider.dart';
 import 'form_/form/form2.dart';
-import 'textfeild_/textfeild/textfeild2.dart';
 import 'controller_/controller/controller1.dart';
 import 'form_/form/form1.dart';
 import 'package:flutter_application_1/gridview_/gridview/gridview1.dart';
@@ -30,7 +30,6 @@ import 'provider/counter_app/counter_provider.dart';
 import 'provider/theme_change/theme_provider.dart';
 import 'provider/theme_change/home_page.dart';
 import 'provider/images_like/UI_HomePage.dart';
-import 'provider/images_like/provider.dart';
 import 'provider/images_like/provider.dart';
 import 'package:flutter_application_1/api(get)/user/1_user/api_homepage.dart';
 import 'package:flutter_application_1/api(get)/user/1_user/user_service.dart';
@@ -68,7 +67,7 @@ class MyApp extends StatelessWidget {
       theme: themeProvider.islight
       ? ThemeData.dark()
       : ThemeData.light(),
-      home: CommentPage(),
+      home: Weatherapi(),
     );
   }
 }
