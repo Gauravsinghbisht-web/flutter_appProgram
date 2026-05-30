@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/api(get)/comments/10_comments/tenhomepage_service.dart';
 import 'package:flutter_application_1/api(get)/comments/1_comment/homepage_comments.dart';
 import 'package:flutter_application_1/api(get)/weather/weather_page.dart';
+import 'package:flutter_application_1/api(post)/post_page.dart';
+import 'package:flutter_application_1/controller_/controller/controller1.dart';
+import 'package:flutter_application_1/form_/form/form2.dart';
 import 'package:flutter_application_1/provider/theme_change/home_page.dart';
 import 'package:provider/provider.dart';
-import 'form_/form/form2.dart';
-import 'controller_/controller/controller1.dart';
-import 'form_/form/form1.dart';
 import 'package:flutter_application_1/gridview_/gridview/gridview1.dart';
 import 'package:flutter_application_1/listview_/listview/listview1.dart';
 import 'package:flutter_application_1/gridview_/gridview/gridview2.dart';
@@ -67,7 +67,7 @@ class MyApp extends StatelessWidget {
       theme: themeProvider.islight
       ? ThemeData.dark()
       : ThemeData.light(),
-      home: Weatherapi(),
+      home: PostPage(),
     );
   }
 }
