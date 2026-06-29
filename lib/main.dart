@@ -6,6 +6,7 @@ import 'package:flutter_application_1/api(get)/weather/weather_page.dart';
 import 'package:flutter_application_1/api(post)/post_page.dart';
 import 'package:flutter_application_1/controller_/controller/controller1.dart';
 import 'package:flutter_application_1/form_/form/form2.dart';
+import 'package:flutter_application_1/listTile/screens/home_screen.dart';
 import 'package:flutter_application_1/provider/theme_change/home_page.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_application_1/gridview_/gridview/gridview1.dart';
@@ -37,20 +38,29 @@ import 'package:flutter_application_1/api(get)/user/1_user/user_service.dart';
 import 'package:flutter_application_1/api(get)/user/10_user/10_homepage.dart';
 import 'package:flutter_application_1/api(get)/fetchimage/home_page_image.dart';
 import 'screens/weather_screen.dart';
+import 'api(get)/news/screens/home_screen.dart';
+import 'DarkMode/home.dart';
+import 'package:flutter_application_1/(Hive)_database/database/hive_service.dart';
+import '(Hive)_database/database/hive_service.dart';
+import '(Hive)_database/models/user_model.dart';
+import '(Hive)_database/screens/home.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+
+void main() async {
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+
+  //Hive.registerAdapter(UserModelAdapter());
+  await Hive.openBox<UserModel>("users");
+  await HiveService.init();
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (_) => ThemeProvider(),
-          ),
-          ChangeNotifierProvider(
-            create: (_) => Counter(),
-            ),
-            ChangeNotifierProvider(
-              create: (_) => LikeProvider(),
-              ),
+        ChangeNotifierProvider(create: (_) => ThemeProvider()),
+        ChangeNotifierProvider(create: (_) => Counter()),
+        ChangeNotifierProvider(create: (_) => LikeProvider()),
       ],
       child: MyApp(),
       )
@@ -68,7 +78,7 @@ class MyApp extends StatelessWidget {
       theme: themeProvider.islight
       ? ThemeData.dark()
       : ThemeData.light(),
-      home: WeatherScreen(),
+      home: ListTileScreen(),
     );
   }
 }

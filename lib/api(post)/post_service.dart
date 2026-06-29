@@ -9,7 +9,7 @@ class PostService {
       'https://dummyjson.com/posts/add',   // dummy Api url.
     );
 
-    final response = await http.post(url,//post request sends to server and wait for server feedback.
+final response = await http.post(url,//post request sends to server and wait for server feedback.
       body: jsonEncode({
         'title': 'Flutter',
         'body': 'Learning POST API',
